@@ -13,7 +13,7 @@
           <p><%= micropost.content %></p>
         </div>
         <div style="float: left">
-          <%= render 'favorites/favo_button', micropost: micropost %>
+             <%= render 'favorites/favo_button', micropost: micropost %>
         </div>
         <div style="float: left">
           <% if current_user == micropost.user %>
