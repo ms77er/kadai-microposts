@@ -39,8 +39,14 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
-  private
+#favorite
+  def favos
+    @user = User.find(params[:id])
+    @favos = @user.favorites.order('created_at DESC').page(params[:page])
+    counts(@user)
+  end
 
+  private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
